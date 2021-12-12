@@ -1,0 +1,22 @@
+{
+  "name": "flooditbot",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node index"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.12",
+    "ts-node": "^10.4.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "grammy": "^1.5.3",
+    "pureimage": "^0.3.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
