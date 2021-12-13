@@ -1,22 +1,17 @@
-import './App.css'
+import { ChangeEvent, useState } from 'react';
 import {Tree, Box, GameStep} from '../../logic';
 import { MAX_STEPS } from '../../const';
-import { useState } from 'react';
+import { BoxElement } from './components/Box/Box';
+import './App.css'
+import { Header } from './components/Header/Header';
+import { GameSettings } from './components/GameSettings/GameSettings';
 
-const tree = new Tree({useEmoji: false});
-
-interface BoxProps {
-  box: Box;
-  onClick: Function;
-}
-
-function BoxElement({box, onClick}: BoxProps) {
-  return (
-    <div style={{backgroundColor: box.color, border: '1px solid black'}} className='box' onClick={() => onClick(box)} />
-  );
+const createTree = (size?: number) => {
+  return new Tree({useEmoji: false, size});
 }
 
 function App() {
+  const [tree, setTree] = useState(createTree());
   const [counter, setCounter] = useState(tree.getScore());
 
   const steps = `${counter} / ${MAX_STEPS}`;
@@ -31,14 +26,18 @@ function App() {
     setCounter(tree.getScore());
   }
 
+  const onChangeSize = (event: ChangeEvent<HTMLSelectElement>) => {
+    const size = Number(event?.target?.value) || undefined;
+    setTree(createTree(size));
+  }
+
   return (
     <div className="wrapper">
-      <div className='score'>
-        {steps}
-      </div>
+      <Header score={steps} />
+      <GameSettings onChange={onChangeSize}/>
       <div className="field">
         {tree.getField().map((row) =>
-        <div>
+        <div className='field-row'>
           {row.map((item) => 
             <BoxElement
               key={`${item.coords[0]} - ${item.coords[1]}`}

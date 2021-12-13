@@ -42,8 +42,8 @@ export class Tree {
     private field: Box[][];
     private score: number;
 
-    constructor(options: {useEmoji: boolean}) {
-        const field = getField(SIZE, options.useEmoji);
+    constructor(options: {useEmoji: boolean, size?: number}) {
+        const field = getField(options.size || SIZE, options.useEmoji);
 
         this.root = field[0][0];
         this.field = field;

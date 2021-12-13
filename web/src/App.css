@@ -1,24 +1,11 @@
 .wrapper {
-  width: 1000px;
+  width: 100vw;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.field {
+.field-row{
   display: flex;
-  flex-wrap: wrap;
-}
-
-.box {
-  /* font-size: 25px; */
-  cursor: pointer;
-  width: 25px;
-  height: 25px;
-  margin: 1px;
-}
-
-.score {
-  font-size: 40px;
 }

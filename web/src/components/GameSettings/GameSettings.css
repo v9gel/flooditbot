@@ -1,0 +1,14 @@
+.settings-wrapper {
+  padding: 10px;
+  font-weight: 400;
+}
+
+.label {
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+.select {
+  font-size: 25px;
+  margin-left: 10px;
+}

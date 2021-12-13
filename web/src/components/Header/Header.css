@@ -1,0 +1,16 @@
+.score {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.score-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+  border: 2px solid #AA00FF;
+  width: 50%;
+  margin: 10px;
+  box-sizing: border-box;
+}
